@@ -47,6 +47,17 @@ OpenSprint is a community sprint platform that connects business problem-submitt
 - `npm run prisma:migrate` — create/apply migration
 - `npm run prisma:seed` — seed demo data
 
+
+## GitHub Pages dashboard preview
+
+This repo includes a static dashboard preview under `docs/index.html` and a deployment workflow at `.github/workflows/deploy-dashboard-pages.yml`.
+
+To publish it:
+
+1. In GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Push changes to `main` (or trigger the workflow manually).
+3. Open your GitHub Pages URL to view the dashboard preview.
+
 ## Architecture Notes
 
 - Auth + role guards are centralized in `lib/auth.ts` and `lib/guards.ts`.
