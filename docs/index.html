@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenSprint Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #e2e8f0;
+        --brand: #2563eb;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .layout {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+      }
+
+      .sidebar {
+        border-right: 1px solid var(--border);
+        padding: 24px;
+        background: var(--card);
+      }
+
+      .sidebar h1 { margin: 0 0 20px; font-size: 1.25rem; }
+      .sidebar nav { display: grid; gap: 10px; }
+      .sidebar a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .sidebar a.active { color: var(--brand); font-weight: 600; }
+
+      .main { padding: 24px; }
+      .hero h2 { margin: 0; font-size: 1.6rem; }
+      .hero p { margin: 8px 0 0; color: var(--muted); }
+
+      .metrics {
+        margin-top: 18px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .label { color: var(--muted); font-size: 0.85rem; }
+      .value { margin-top: 8px; font-size: 1.4rem; font-weight: 700; }
+
+      .board {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .column { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+      .column h3 { margin: 4px 0 12px; font-size: 1rem; }
+      .task { border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-bottom: 10px; background: #fff; }
+      .task p { margin: 0; font-size: 0.9rem; }
+      .task small { color: var(--muted); }
+
+      .footer {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 900px) {
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+        .board { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>OpenSprint</h1>
+        <nav>
+          <a class="active" href="#">Overview</a>
+          <a href="#">My Problems</a>
+          <a href="#">Sprint Board</a>
+          <a href="#">Solver Profile</a>
+          <a href="#">Settings</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <section class="hero">
+          <h2>Welcome back</h2>
+          <p>Problems created: 14 · Cards created: 38</p>
+        </section>
+
+        <section class="metrics">
+          <article class="card">
+            <div class="label">Draft problems</div>
+            <div class="value">3</div>
+          </article>
+          <article class="card">
+            <div class="label">Active sprints</div>
+            <div class="value">2</div>
+          </article>
+          <article class="card">
+            <div class="label">Open cards</div>
+            <div class="value">11</div>
+          </article>
+          <article class="card">
+            <div class="label">Completed this week</div>
+            <div class="value">7</div>
+          </article>
+        </section>
+
+        <section class="board">
+          <article class="column">
+            <h3>Backlog</h3>
+            <div class="task"><p>Define scoring rubric for solver matching</p><small>Priority: high</small></div>
+            <div class="task"><p>Summarize stakeholder interview notes</p><small>Priority: medium</small></div>
+          </article>
+          <article class="column">
+            <h3>In Progress</h3>
+            <div class="task"><p>Prototype sprint intake form validations</p><small>Priority: high</small></div>
+            <div class="task"><p>Moderation queue analytics card</p><small>Priority: low</small></div>
+          </article>
+          <article class="column">
+            <h3>Done</h3>
+            <div class="task"><p>Gallery publishing workflow check</p><small>Completed today</small></div>
+            <div class="task"><p>Board ordering unit tests</p><small>Completed yesterday</small></div>
+          </article>
+        </section>
+
+        <p class="footer">Static dashboard preview for GitHub Pages deployment.</p>
+      </main>
+    </div>
+  </body>
+</html>
